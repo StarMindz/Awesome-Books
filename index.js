@@ -1,11 +1,9 @@
 /* eslint-disable no-array-constructor */
 /* eslint-disable semi */
 const bookTitle = document.getElementById('book-title');
-const authorName =document.getElementById('book-author');
+const authorName = document.getElementById('book-author');
 const button = document.getElementById('submit');
 const list = document.querySelector('#books-ul');
-
-console.log(this.mybutton.parentNode)
 const array = new Array();
 let counter = 0;
 
@@ -38,6 +36,5 @@ button.addEventListener('click', (e) => {
   // LOCAL-STORAGE
   dataform();
   // COUNTER-TRACKER
-  counter++;
-}
-)
+  counter += 1;
+})
