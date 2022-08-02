@@ -1,0 +1,5 @@
+# .gitignore
+node_modules/
+testing.html
+testing.js
+testing.css
