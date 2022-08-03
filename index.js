@@ -37,8 +37,7 @@ class Collection {
 
   removeBook() {
     const buttons = document.querySelectorAll('.removebuttons');
-    buttons[buttons.length-1].addEventListener('click', (e) => {
-      console.log('Go on ')
+    buttons[buttons.length - 1].addEventListener('click', (e) => {
       e.preventDefault();
       const elid = e.target.parentNode.id
       const remotion = e.target.parentNode;
