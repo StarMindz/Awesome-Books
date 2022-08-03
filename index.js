@@ -9,13 +9,13 @@ let delcounter = 0;
 
 const dataform = () => {
   localStorage.setItem('data', JSON.stringify(array));
-  console.log(`testing ${counter}`);
+  // console.log(`testing ${counter}`);
 };
 
 const removeBook = (e) => {
   e.preventDefault();
-  console.log(array);
-  console.log(delcounter)
+  // console.log(array);
+  // console.log(delcounter)
   const elid = e.target.parentNode.id
   const remotion = e.target.parentNode;
   const localcount = (elid - delcounter);
@@ -51,7 +51,7 @@ button.addEventListener('click', (e) => {
   dataform();
   // COUNTER-TRACKER
   counter += 1;
-  console.log(array);
+  // console.log(array);
 })
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     removebtn.addEventListener('click', removeBook);
     li.appendChild(removebtn);
     list.appendChild(li);
-    counter++;
-  }
-  )
+    counter += 1;
+  });
 })
