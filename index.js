@@ -40,11 +40,11 @@ class Collection {
     e.preventDefault();
     const elid = e.target.parentNode.id
     const remotion = e.target.parentNode;
-    const index = books.bookArray.indexOf(remotion)
-    list.removeChild(remotion)
-    books.bookArray.splice(index, 1);
-    // console.log(books.bookArray);
-    // books.delcounter += 1;
+    console.log(books.delcounter);
+    const localcount = (elid - books.delcounter);
+    list.removeChild(remotion);
+    books.bookArray.splice(localcount, 1);
+    books.delcounter += 1;
     dataform();
   }
 }
