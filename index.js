@@ -80,7 +80,7 @@ const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
   // console.log(mystorage);
   mystorage.forEach((element) => {
-    const {title, author} = element;
+    const { title, author } = element;
     books.addBook(title, author);
     books.removeBook();
     books.counter += 1;
