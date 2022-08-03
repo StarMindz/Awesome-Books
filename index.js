@@ -3,6 +3,9 @@ const bookTitle = document.getElementById('book-title');
 const authorName = document.getElementById('book-author');
 const button = document.getElementById('submit');
 const list = document.querySelector('#books-ul');
+// const array = [];
+// let counter = 0;
+// let delcounter = 0;
 
 class Collection {
   constructor() {
@@ -27,24 +30,29 @@ class Collection {
     // REMOVE BUTTON
     removebtn.className = 'removebuttons'
     removebtn.textContent = 'Remove';
-    removebtn.addEventListener('click', this.removeBook);
+    // removebtn.addEventListener('click', this.removeBook);
     li.appendChild(removebtn);
     list.appendChild(li);
   }
 
-  removeBook(e) {
-    e.preventDefault();
-    this.elid = e.target.parentNode.id
-    const remotion = e.target.parentNode;
-    this.localcount = (this.elid - books.delcounter);
-    list.removeChild(remotion);
-    books.bookArray.splice(this.localcount, 1);
-    books.delcounter += 1;
-    dataform();
+  removeBook() {
+    const buttons = document.querySelectorAll('.removebuttons');
+    buttons[buttons.length-1].addEventListener('click', (e) => {
+      console.log('Go on ')
+      e.preventDefault();
+      const elid = e.target.parentNode.id
+      const remotion = e.target.parentNode;
+      const localcount = (elid - this.delcounter);
+      list.removeChild(remotion);
+      this.bookArray.splice(localcount, 1);
+      this.delcounter += 1;
+      dataform();
+    });
   }
 }
 
 const books = new Collection();
+
 const dataform = () => {
   localStorage.setItem('data', JSON.stringify(books.bookArray));
 };
@@ -55,6 +63,7 @@ button.addEventListener('click', (e) => {
   const author = authorName.value;
   books.addBook(book, author);
   books.display(book, author);
+  books.removeBook();
   // RESET-VALUES
   authorName.value = '';
   bookTitle.value = '';
@@ -66,11 +75,13 @@ button.addEventListener('click', (e) => {
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
+  // console.log(mystorage);
   mystorage.forEach((element) => {
     const book = element.title;
-    const { author } = element;
+    const author = element.author;
     books.addBook(book, author);
     books.display(book, author);
+    books.removeBook()
     books.counter += 1;
   });
 })
