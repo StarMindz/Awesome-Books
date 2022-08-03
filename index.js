@@ -1,19 +1,29 @@
-/* eslint-disable no-array-constructor */
 /* eslint-disable semi */
 const bookTitle = document.getElementById('book-title');
 const authorName = document.getElementById('book-author');
 const button = document.getElementById('submit');
 const list = document.querySelector('#books-ul');
-const array = new Array();
+const array = [];
 let counter = 0;
+let delcounter = 0;
 
-// eslint-disable-next-line no-unused-vars
+const dataform = () => {
+  localStorage.setItem('data', JSON.stringify(array));
+  console.log(`testing ${counter}`);
+};
+
 const removeBook = (e) => {
+  e.preventDefault();
+  console.log(array);
+  console.log(delcounter)
+  const elid = e.target.parentNode.id
   const remotion = e.target.parentNode;
+  const localcount = (elid - delcounter);
   list.removeChild(remotion);
+  array.splice(localcount, 1);
+  delcounter += 1;
+  dataform();
 }
-
-const dataform = () => localStorage.setItem('data', array);
 
 button.addEventListener('click', (e) => {
   e.preventDefault();
@@ -21,9 +31,13 @@ button.addEventListener('click', (e) => {
   const author = authorName.value;
   const li = document.createElement('li');
   const removebtn = document.createElement('button');
-  array.push(`${book} by ${author} `)
-  li.setAttribute('id', `book_${counter}`);
-  li.textContent = `${array[counter]}`;
+  const object = {};
+  object.id = counter;
+  object.title = book;
+  object.author = author;
+  array.push(object);
+  li.setAttribute('id', `${counter}`);
+  li.textContent = `${book} by ${author}`;
   // REMOVE BUTTON
   removebtn.className = 'removebuttons'
   removebtn.textContent = 'Remove';
@@ -37,4 +51,27 @@ button.addEventListener('click', (e) => {
   dataform();
   // COUNTER-TRACKER
   counter += 1;
+  console.log(array);
+})
+
+const mystorage = JSON.parse(localStorage.getItem('data').split(','));
+document.addEventListener('DOMContentLoaded', () => {
+  mystorage.forEach(element => {
+    const li = document.createElement('li');
+    const removebtn = document.createElement('button');
+    li.setAttribute('id', `${counter}`);
+    li.textContent = `${element.title} by ${element.author}`;
+    const object = {};
+    object.id = counter;
+    object.title = element.title;
+    object.author = element.author;
+    array.push(object);
+    removebtn.className = 'removebuttons'
+    removebtn.textContent = 'Remove';
+    removebtn.addEventListener('click', removeBook);
+    li.appendChild(removebtn);
+    list.appendChild(li);
+    counter++;
+  }
+  )
 })
