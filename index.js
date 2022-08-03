@@ -33,6 +33,7 @@ function getButtons() {
         item.id !== id;
       });
       console.log('Im here')
+      
       displayElement();
     })
   });
