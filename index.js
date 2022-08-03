@@ -27,6 +27,7 @@ class Collection {
     const li = document.createElement('li');
     const removebtn = document.createElement('button');
     li.setAttribute('id', `${this.counter}`);
+    li.className = 'lists';
     li.textContent = `${book} by ${author}`;
     // REMOVE BUTTON
     removebtn.className = 'removebuttons'
