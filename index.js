@@ -46,11 +46,11 @@ class Collection {
       list.removeChild(remotion);
       this.bookArray.splice(localcount, 1);
       this.delcounter += 1;
-      this.dataform();
+      this.dataLog();
     });
   }
 
-  dataform() {
+  dataLog() {
     localStorage.setItem('data', JSON.stringify(this.bookArray));
   }
 }
