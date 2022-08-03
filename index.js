@@ -68,5 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
     li.appendChild(removebtn);
     list.appendChild(li);
     delcounter += 1;
-  }),
+  });
 })
