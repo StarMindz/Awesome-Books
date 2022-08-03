@@ -52,7 +52,7 @@ button.addEventListener('click', (e) => {
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
-  mystorage.forEach(element => {
+  mystorage.forEach((element) => {
     const li = document.createElement('li');
     const removebtn = document.createElement('button');
     li.setAttribute('id', `${counter}`);
