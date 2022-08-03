@@ -26,7 +26,7 @@ class Collection {
     li.className = 'lists';
     li.textContent = `${book} by ${author}`;
     // REMOVE BUTTON
-    removebtn.className = 'removebuttons'
+    removebtn.className = 'removebuttons';
     removebtn.textContent = 'Remove';
     li.appendChild(removebtn);
     list.appendChild(li);
@@ -36,7 +36,7 @@ class Collection {
     const buttons = document.querySelectorAll('.removebuttons');
     buttons[buttons.length - 1].addEventListener('click', (e) => {
       e.preventDefault();
-      const elid = e.target.parentNode.id
+      const elid = e.target.parentNode.id;
       const remotion = e.target.parentNode;
       const localcount = (elid - this.delcounter);
       list.removeChild(remotion);
@@ -70,7 +70,7 @@ button.addEventListener('click', (e) => {
   dataform();
   // COUNTER-TRACKER
   books.counter += 1;
-})
+});
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
@@ -80,4 +80,4 @@ document.addEventListener('DOMContentLoaded', () => {
     books.removeBook();
     books.counter += 1;
   });
-})
+});
