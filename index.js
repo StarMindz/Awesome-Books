@@ -5,13 +5,13 @@ const button = document.getElementById('submit');
 const list = document.querySelector('#books-ul');
 
 class Collection {
-  constructor () {
+  constructor() {
     this.bookArray = [];
     this.counter = 0;
     this.delcounter = 0;
   }
 
-  addBook (book, author) {
+  addBook(book, author) {
     const object = {};
     object.id = this.counter;
     object.title = book;
@@ -19,7 +19,7 @@ class Collection {
     this.bookArray.push(object);
   }
 
-  display (book, author) {
+  display(book, author) {
     const li = document.createElement('li');
     const removebtn = document.createElement('button');
     li.setAttribute('id', `${this.counter}`);
@@ -32,21 +32,19 @@ class Collection {
     list.appendChild(li);
   }
 
-  removeBook (e) {
+  removeBook(e) {
     e.preventDefault();
-    const elid = e.target.parentNode.id
+    this.elid = e.target.parentNode.id
     const remotion = e.target.parentNode;
-    console.log(books.delcounter);
-    const localcount = (elid - books.delcounter);
+    this.localcount = (this.elid - books.delcounter);
     list.removeChild(remotion);
-    books.bookArray.splice(localcount, 1);
+    books.bookArray.splice(this.localcount, 1);
     books.delcounter += 1;
     dataform();
   }
 }
 
 const books = new Collection();
-
 const dataform = () => {
   localStorage.setItem('data', JSON.stringify(books.bookArray));
 };
@@ -68,10 +66,9 @@ button.addEventListener('click', (e) => {
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(mystorage);
   mystorage.forEach((element) => {
     const book = element.title;
-    const author = element.author;
+    const { author } = element;
     books.addBook(book, author);
     books.display(book, author);
     books.counter += 1;
