@@ -20,6 +20,7 @@ class Collection {
     object.title = book;
     object.author = author;
     this.bookArray.push(object);
+    this.display(book, author);
   }
 
   display(book, author) {
@@ -45,8 +46,12 @@ class Collection {
       list.removeChild(remotion);
       this.bookArray.splice(localcount, 1);
       this.delcounter += 1;
-      dataform();
+      this.dataform();
     });
+  }
+
+  dataform() {
+    localStorage.setItem('data', JSON.stringify(this.bookArray));
   }
 }
 
@@ -61,7 +66,6 @@ button.addEventListener('click', (e) => {
   const book = bookTitle.value;
   const author = authorName.value;
   books.addBook(book, author);
-  books.display(book, author);
   books.removeBook();
   // RESET-VALUES
   authorName.value = '';
@@ -79,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const book = element.title;
     const author = element.author;
     books.addBook(book, author);
-    books.display(book, author);
     books.removeBook()
     books.counter += 1;
   });
