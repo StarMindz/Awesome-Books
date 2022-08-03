@@ -20,6 +20,7 @@ class Collection {
     object.title = book;
     object.author = author;
     this.bookArray.push(object);
+    // console.log(this.bookArray);
   }
   
   display(book, author) {
@@ -39,10 +40,11 @@ class Collection {
     e.preventDefault();
     const elid = e.target.parentNode.id
     const remotion = e.target.parentNode;
-    const localcount = (elid - this.delcounter);
-    list.removeChild(remotion);
-    array.splice(localcount, 1);
-    this.delcounter += 1;
+    const index = books.bookArray.indexOf(remotion)
+    list.removeChild(remotion)
+    books.bookArray.splice(index, 1);
+    // console.log(books.bookArray);
+    // books.delcounter += 1;
     dataform();
   }
 }
@@ -72,21 +74,10 @@ const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
   console.log(mystorage);
   mystorage.forEach((element) => {
-    const li = document.createElement('li');
-    const removebtn = document.createElement('button');
-    li.setAttribute('id', `${counter}`);
-    li.textContent = `${element.title} by ${element.author}`;
-    const object = {};
-    object.id = counter;
-    object.title = element.title;
-    object.author = element.author;
-    array.push(object);
-    removebtn.className = 'removebuttons'
-    removebtn.textContent = 'Remove';
-    removebtn.addEventListener('click', removeBook);
-    li.appendChild(removebtn);
-    list.appendChild(li);
-    counter += 1;
-    delcounter += 1;
+    let book = element.title;
+    let author = element.author;
+    books.addBook(book, author);
+    books.display(book, author);
+    books.counter += 1;
   });
 })
