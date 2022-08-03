@@ -1,11 +1,7 @@
-/* eslint-disable semi */
 const bookTitle = document.getElementById('book-title');
 const authorName = document.getElementById('book-author');
 const button = document.getElementById('submit');
 const list = document.querySelector('#books-ul');
-// const array = [];
-// let counter = 0;
-// let delcounter = 0;
 
 class Collection {
   constructor() {
@@ -32,7 +28,6 @@ class Collection {
     // REMOVE BUTTON
     removebtn.className = 'removebuttons'
     removebtn.textContent = 'Remove';
-    // removebtn.addEventListener('click', this.removeBook);
     li.appendChild(removebtn);
     list.appendChild(li);
   }
@@ -79,7 +74,6 @@ button.addEventListener('click', (e) => {
 
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
-  // console.log(mystorage);
   mystorage.forEach((element) => {
     const { title, author } = element;
     books.addBook(title, author);
