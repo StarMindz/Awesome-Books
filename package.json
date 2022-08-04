@@ -2,7 +2,6 @@
   "name": "awesome-books",
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet) # Awesome-Books A website that allows users to add/remove books from a list using JavaScript objects and arrays.",
-
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,12 +17,12 @@
     "url": "https://github.com/dgonzalesi/portafolio-project/issues"
   },
   "homepage": "https://github.com/StarMindz/Awesome-Books#readme",
-    "devDependencies": {
+  "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
-    "hint": "^7.1.0",
+    "hint": "^7.1.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
