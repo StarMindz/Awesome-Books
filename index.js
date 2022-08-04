@@ -71,7 +71,7 @@ button.addEventListener('click', (e) => {
   // COUNTER-TRACKER
   books.counter += 1;
 });
-
+// Local Storage Retrieval
 const mystorage = JSON.parse(localStorage.getItem('data').split(','));
 document.addEventListener('DOMContentLoaded', () => {
   mystorage.forEach((element) => {
@@ -81,5 +81,39 @@ document.addEventListener('DOMContentLoaded', () => {
     books.counter += 1;
   });
 });
+// Clock
+const dateElement = document.getElementById('date');
+const localdate = () => {
+  const date = new Date();
+  const dateString = date.toLocaleString();
+  dateElement.textContent = dateString;
+};
 
-// document.addEventListener('click', (e) => {})
+setInterval(localdate, 1000);
+// End of Clock
+// WEB APP
+const listBtn = document.querySelector('#list-btn');
+const addBtn = document.getElementById('add-btn');
+const contactBtn = document.getElementById('contact-btn');
+const texttest = document.getElementById('add_book');
+const contact = document.getElementById('contact');
+const addForm = document.getElementById('add-form');
+
+listBtn.addEventListener('click', () => {
+  list.className = 'display';
+  contact.className = 'contact nodisplay';
+  addForm.className = 'display-form nodisplay';
+  texttest.innerText = 'All awesome books';
+});
+contactBtn.addEventListener('click', () => {
+  list.className = 'nodisplay';
+  contact.className = 'contact display';
+  addForm.className = 'display-form nodisplay';
+  texttest.innerText = 'Contact Information';
+});
+addBtn.addEventListener('click', () => {
+  list.className = 'nodisplay';
+  contact.className = 'contact nodisplay';
+  addForm.className = 'display-form display';
+  texttest.innerText = 'Add a new book';
+});
