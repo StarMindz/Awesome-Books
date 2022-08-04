@@ -81,3 +81,5 @@ document.addEventListener('DOMContentLoaded', () => {
     books.counter += 1;
   });
 });
+
+// document.addEventListener('click', (e) => {})
