@@ -1,5 +1,6 @@
 # .gitignore
 node_modules/
+hint-report/
 testing.html
 testing.js
 testing.css
