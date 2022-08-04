@@ -17,8 +17,8 @@
   "bugs": {
     "url": "https://github.com/dgonzalesi/portafolio-project/issues"
   },
-  "homepage": "https://github.com/StarMindz/Awesome-Books#readme"
-  "devDependencies": {
+  "homepage": "https://github.com/StarMindz/Awesome-Books#readme",
+    "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
