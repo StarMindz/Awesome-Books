@@ -4,7 +4,7 @@
 
 button {
   border: none;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 }
 
 body {
@@ -80,7 +80,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 30%;
-  
 }
 
 .navbtn {
@@ -114,7 +113,7 @@ footer {
   min-height: 200px;
 }
 
-.display{
+.display {
   display: flex;
 }
 
