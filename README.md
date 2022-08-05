@@ -14,8 +14,11 @@ Awesome Books is a website that allows users to add/remove books from a list usi
 
 ## Live Demo (if available)
 
-[Coming Soon!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+[Check here!](https://starmindz.github.io/Awesome-Books/)
 
+## Video Demo
+
+[Coming soon!](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## Getting Started
 
