@@ -40,8 +40,7 @@ To get a local copy up and running follow these simple example steps.
 👤 **Stanley**
 
 - GitHub: [@githubhandle](https://github.com/StarMindz)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/stanley-nnamani-72224b180)
 
 ## 🤝 Contributing
 
