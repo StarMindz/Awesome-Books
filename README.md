@@ -12,7 +12,7 @@ Awesome Books is a website that allows users to add/remove books from a list usi
 - JavaScript
 - A lot of Coffee
 
-## Live Demo (if available)
+## Live Demo
 
 [Check here!](https://starmindz.github.io/Awesome-Books/)
 
